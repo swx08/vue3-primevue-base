@@ -16,9 +16,13 @@ import pinia from "@/stores/index";
 import { createPersistedState } from "pinia-persistedstate-plugin";
 //引入路由鉴权文件
 import "./permission";
+//引入自定义插件用来注册全局组件
+import globalComponent from "@/plugins";
 
 const app = createApp(App);
 const persist = createPersistedState();
+//安装自定义插件
+app.use(globalComponent);
 //将各种实例挂载到全局
 app.use(PrimeVue, {
   theme: {

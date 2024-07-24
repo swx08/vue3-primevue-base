@@ -1,11 +1,12 @@
 <template>
   <div class="layout-content">
     我是内容
+    <svg-icon name="logo" width="100px" height="100px" />
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from 'vue';
 onMounted(() => { })
 
 </script>

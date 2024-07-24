@@ -4,6 +4,7 @@ import vue from "@vitejs/plugin-vue";
 import path from "path";
 import Components from "unplugin-vue-components/vite";
 import { PrimeVueResolver } from "@primevue/auto-import-resolver";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 
 // 导出 Vite 配置
 export default defineConfig(({ command, mode }) => {
@@ -34,6 +35,11 @@ export default defineConfig(({ command, mode }) => {
       vue(),
       Components({
         resolvers: [PrimeVueResolver()],
+      }),
+      createSvgIconsPlugin({
+        // 配置svg图标所在位置
+        iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
+        symbolId: "icon-[dir]-[name]",
       }),
     ],
     //scss样式配置：global.scss中的变量可以全局使用

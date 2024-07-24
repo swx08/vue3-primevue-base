@@ -1,8 +1,8 @@
 <template>
     <div class="layout-container">
-        <Aside />
-        <div>
-            <Header />
+        <Header />
+        <div class="layout-content">
+            <Aside />
             <Content />
         </div>
     </div>
@@ -21,6 +21,10 @@ onMounted(() => {})
 .layout-container{
     height: 100vh;
     width: 100vw;
-    display: flex;
+
+    .layout-content{
+        display: flex;
+        height: calc(100vh - $base-header-height);
+    }
 }
 </style>

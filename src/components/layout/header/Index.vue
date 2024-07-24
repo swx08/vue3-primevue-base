@@ -12,7 +12,7 @@ onMounted(() => { })
 <style scoped lang='scss'>
 .layout-header {
   height: $base-header-height;
-  width: calc(100vw - $base-aside-width);
+  width: 100vw;
   background-color: rgb(21, 39, 46);
   color: #fff;
 }
