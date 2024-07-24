@@ -1,7 +1,8 @@
 <template>
   <div class="layout-content">
     我是内容
-    <svg-icon name="logo" width="100px" height="100px" />
+    <svg-icon name="logo" width="15rem" height="15rem" />
+    <span style="font-size: 1.5rem;">决定是否了解的客服经理刷卡积分水电开发经理开始</span>
   </div>
 </template>
 

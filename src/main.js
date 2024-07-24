@@ -17,6 +17,7 @@ import { createPersistedState } from "pinia-persistedstate-plugin";
 //引入路由鉴权文件
 import "./permission";
 //引入自定义插件用来注册全局组件
+import "virtual:svg-icons-register";
 import globalComponent from "@/plugins";
 
 const app = createApp(App);
