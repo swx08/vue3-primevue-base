@@ -1,6 +1,9 @@
 <template>
   <div class="layout-aside">
-    我是左侧
+    <div style="height: 70px;">
+      我是logo
+    </div>
+    <Divider />
   </div>
 </template>
 
@@ -12,8 +15,13 @@ onMounted(() => { })
 <style scoped lang='scss'>
 .layout-aside {
   width: $base-aside-width;
-  height: calc(100vh - $base-header-height);
-  background-color: rgb(11, 16, 45);
-  color: #fff;
+  height: calc(100vh - $base-header-padding * 2);
+  background-color: #30efbf;
+  color: #1e1616;
+  border-radius: 0 8px 8px 0;
+}
+
+.p-divider-horizontal{
+  margin: 0;
 }
 </style>

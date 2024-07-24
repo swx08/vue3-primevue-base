@@ -1,10 +1,22 @@
 //设置全局样式
 
 // 头部高度
-$base-header-height: 64px;
+$base-header-height: 70px;
 
 //左侧宽度
-$base-aside-width: 220px;
+$base-aside-width: 200px;
 
-//内容展示区内边距
-$base-content-padding: 30px;
+//网站整体内边距
+$base-padding: 16px 16px 0 0;
+
+//网站整体内边距
+$base-header-padding: 16px;
+
+//头部左侧距离
+$base-header-margin: 16px;
+
+//内容距离
+$base-content-margin: 16px 0 0 16px;
+
+//背景颜色
+$base-background: #f6f8fc;
