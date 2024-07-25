@@ -1,7 +1,9 @@
 <template>
-  <div class="layout-header">
-    我是头部
-  </div>
+  <Card class="layout-header">
+    <template #content>
+      我是头部
+    </template>
+  </Card>
 </template>
 
 <script setup>
@@ -13,10 +15,12 @@ onMounted(() => { })
 .layout-header {
   height: $base-header-height;
   width: calc(100vw - $base-aside-width);
-  background-color: #11a5c6;
-  color: #1e1616;
   margin-left: $base-header-margin;
   padding: $base-header-padding;
   border-radius: 8px;
+}
+
+:deep(.p-card-body) {
+  padding: 0;
 }
 </style>
