@@ -1,7 +1,9 @@
 <template>
-    <sidebar-menu :collapsed="collapsedStore.collapsed" :hideToggle="true" :menu="items" width="220px" theme="white-theme">
+    <sidebar-menu :collapsed="collapsedStore.collapsed" :hideToggle="true" :menu="items" width="220px"
+        theme="white-theme">
         <template v-slot:header>
             <Logo />
+            <Divider />
         </template>
     </sidebar-menu>
 </template>
@@ -65,8 +67,8 @@ const items = ref([
 ]);
 </script>
 <style scoped lang='scss'>
-:deep(.p-menu){
-    border: none;
-    padding: 0 8px 0 8px;
+:deep(.p-divider-horizontal){
+    padding: 0;
+    margin: 0 0 16px 0;
 }
 </style>

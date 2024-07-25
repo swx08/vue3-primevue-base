@@ -15,14 +15,10 @@ onMounted(() => { })
 .layout-aside {
   width: $base-aside-width;
   height: calc(100vh - $base-header-padding * 2);
+}
+
+:deep(.v-sidebar-menu) {
+  margin: 16px 0 16px 0;
   border-radius: 0 8px 8px 0;
-}
-
-:deep(.p-card-body) {
-  padding: 0;
-}
-
-:deep(.p-divider-horizontal) {
-  margin: 0;
 }
 </style>
