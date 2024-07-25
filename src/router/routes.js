@@ -18,6 +18,39 @@ const routes = [
     ],
   },
   {
+    path: "/system",
+    name: "System",
+    component: () => import("@/components/layout/Index.vue"),
+    redirect: "/system/notice",
+    meta: {
+      title: "系统管理",
+      hidden: false,
+      icon: "LockOutlined",
+    },
+    children: [
+      {
+        path: "/system/notice",
+        name: "Notice",
+        component: () => import("@/views/system/notice/Index.vue"),
+        meta: {
+          title: "公告管理",
+          hidden: false,
+          icon: "UserOutlined",
+        },
+      },
+      {
+        path: "/system/dict",
+        name: "Dict",
+        component: () => import("@/views/system/dict/Index.vue"),
+        meta: {
+          title: "字典管理",
+          hidden: false,
+          icon: "UserSwitchOutlined",
+        },
+      },
+    ],
+  },
+  {
     path: "/permission",
     name: "Permission",
     component: () => import("@/components/layout/Index.vue"),

@@ -1,6 +1,6 @@
 <template>
     <div class="logo">
-        <svg-icon name="logo" width="42px" height="42px"></svg-icon>
+        <svg-icon name="logo" width="32px" height="32px"></svg-icon>
         <span v-if="!collapsedStore.collapsed">Elp - 后台系统</span>
     </div>
 </template>
@@ -20,7 +20,7 @@ onMounted(() => { })
     padding: $base-header-padding;
     display: flex;
     align-items: center;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     overflow: hidden;
 }
@@ -28,6 +28,5 @@ onMounted(() => { })
 .logo span{
     flex-shrink: 0;
     margin-left: 8px;
-    color: black;
 }
 </style>

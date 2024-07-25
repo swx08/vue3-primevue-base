@@ -19,6 +19,6 @@ onMounted(() => { })
 
 :deep(.v-sidebar-menu) {
   margin: 16px 0 16px 0;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 12px 12px 0;
 }
 </style>

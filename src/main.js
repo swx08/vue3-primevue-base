@@ -27,7 +27,12 @@ app.use(globalComponent);
 //将各种实例挂载到全局
 app.use(PrimeVue, {
   theme: {
-    preset: Aura
+    preset: Aura,
+    options: {
+      prefix: "my",
+      darkModeSelector: ".my-app-dark",
+      cssLayer: false,
+    },
   },
 });
 app.use(ToastService);

@@ -1,12 +1,10 @@
 <template>
-    <div>
-        <Button @click="handgeCollapsedStatus" v-if="!collapsedStore.collapsed" outlined aria-label="Filter">
-            <svg-icon name="collapsed-left" width="20px" height="20px" />
-        </Button>
-        <Button @click="handgeCollapsedStatus" v-else outlined aria-label="Filter">
-            <svg-icon name="collapsed-right" width="20px" height="20px" />
-        </Button>
-    </div>
+    <Button @click="handgeCollapsedStatus" text rounded v-if="!collapsedStore.collapsed" severity="secondary">
+        <svg-icon name="collapsed-left" width="20px" height="20px" />
+    </Button>
+    <Button @click="handgeCollapsedStatus" text rounded v-else severity="secondary">
+        <svg-icon name="collapsed-right" width="20px" height="20px" />
+    </Button>
 </template>
 
 <script setup>
@@ -24,4 +22,5 @@ const handgeCollapsedStatus = () => {
 }
 </script>
 <style scoped lang='scss'>
+
 </style>
