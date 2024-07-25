@@ -1,9 +1,8 @@
 <template>
   <Card class="layout-aside">
     <template #title>
-      <div style="height: 70px;padding: 16px;">
-        我是logo
-      </div>
+      <!-- logo -->
+      <Logo />
       <Divider />
     </template>
     <template #content>
@@ -16,7 +15,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from 'vue';
+import Logo from "./component/logo/Index.vue";
+
+
 onMounted(() => { })
 
 </script>
@@ -27,11 +29,11 @@ onMounted(() => { })
   border-radius: 0 8px 8px 0;
 }
 
-:deep(.p-card-body){
+:deep(.p-card-body) {
   padding: 0;
 }
 
-:deep(.p-divider-horizontal){
+:deep(.p-divider-horizontal) {
   margin: 0;
 }
 </style>
