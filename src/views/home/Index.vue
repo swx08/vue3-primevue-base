@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: #eee;width: 100%;">
+  <div style="background-color: #eee;width: 100%;padding: 16px;">
     我是首页
     <div class="card flex justify-center flex-wrap gap-4">
       <Button label="Primary" text raised />

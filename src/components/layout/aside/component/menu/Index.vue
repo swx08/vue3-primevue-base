@@ -1,6 +1,6 @@
 <template>
     <sidebar-menu :collapsed="collapsedStore.collapsed" :hideToggle="true" :menu="items" width="220px"
-        theme="white-theme">
+        theme="white-theme" @item-click="onItemClick">
         <template v-slot:header>
             <Logo />
             <Divider />
@@ -15,6 +15,7 @@ import Logo from "@/components/layout/aside/component/logo/Index.vue";
 import { SidebarMenu } from 'vue-sidebar-menu';
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css';
 import { useCollapsedStore } from "@/stores/models/collapsed";
+import router from '@/router';
 
 //控制菜单收缩
 const collapsedStore = useCollapsedStore();
@@ -53,12 +54,17 @@ const items = ref([
         icon: 'pi pi-lock',
         child: [
             {
-                href: '/charts/sublink',
+                href: '/permission/user',
                 title: '用户管理',
                 icon: 'pi pi-user',
             },
             {
-                href: '/charts/sublink',
+                href: '/permission/role',
+                title: '角色管理',
+                icon: 'pi pi-box',
+            },
+            {
+                href: '/permission/menu',
                 title: '角色管理',
                 icon: 'pi pi-box',
             }
