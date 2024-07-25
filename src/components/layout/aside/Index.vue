@@ -1,23 +1,12 @@
 <template>
-  <Card class="layout-aside">
-    <template #title>
-      <!-- logo -->
-      <Logo />
-      <Divider />
-    </template>
-    <template #content>
-      <!-- 菜单 -->
-      <div class="menu">
-        我是菜单
-      </div>
-    </template>
-  </Card>
+  <div class="layout-aside">
+    <Menu />
+  </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import Logo from "./component/logo/Index.vue";
-
+import Menu from "./component/menu/Index.vue";
 
 onMounted(() => { })
 

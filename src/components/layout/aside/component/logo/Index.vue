@@ -1,12 +1,16 @@
 <template>
     <div class="logo">
         <svg-icon name="logo" width="42px" height="42px"></svg-icon>
-        <span>Elp - 后台系统</span>
+        <span v-if="!collapsedStore.collapsed">Elp - 后台系统</span>
     </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from 'vue';
+import { useCollapsedStore } from "@/stores/models/collapsed";
+
+//控制菜单收缩
+const collapsedStore = useCollapsedStore();
 onMounted(() => { })
 
 </script>

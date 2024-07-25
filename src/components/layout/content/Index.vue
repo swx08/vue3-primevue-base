@@ -2,6 +2,8 @@
   <div class="layout-content">
     <div style="height: 400px;background-color: #eee;">
       我是内容
+      <span class="pi pi-user"></span>
+      <span class="pi pi-angle-down"></span>
     </div>
   </div>
 </template>
