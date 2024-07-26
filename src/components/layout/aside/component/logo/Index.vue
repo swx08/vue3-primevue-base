@@ -28,5 +28,6 @@ onMounted(() => { })
 .logo span{
     flex-shrink: 0;
     margin-left: 8px;
+    color: black;
 }
 </style>

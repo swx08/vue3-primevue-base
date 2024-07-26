@@ -41,7 +41,9 @@ onMounted(() => { })
 
 // 滚动条背景颜色
 :deep(.simplebar-scrollbar::before) {
-  background-color: $simplebar-scrollbar-backColor;
+  //滚动条隐藏
+  display: none;
+  // background-color: $simplebar-scrollbar-backColor;
 }
 
 // 滚动条宽度
@@ -59,13 +61,6 @@ onMounted(() => { })
   opacity: 0;
   transform: scale(0.7);
   /* 从0.5开始缩放，使起始状态部分可见 */
-  transform-origin: center;
-}
-
-.fade-enter-to {
-  opacity: 1;
-  transform: scale(1);
-  /* 缩放到1，即正常尺寸 */
   transform-origin: center;
 }
 </style>
