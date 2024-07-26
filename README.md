@@ -27,3 +27,13 @@ npm i vue-sidebar-menu --save
 ```
 
 具体使用方法参考官网
+
+## 主面板展示
+>简约模式
+![](https://pic.imgdb.cn/item/66a3d9a9d9c307b7e9e7615e.png)
+
+>暗黑模式
+
+![](https://pic.imgdb.cn/item/66a3d95dd9c307b7e9e71631.png)
+
+
