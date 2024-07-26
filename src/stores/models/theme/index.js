@@ -7,6 +7,7 @@ export const useThemeStore = defineStore("theme", () => {
   // 创建一个名为 token 的响应式变量
   const dark = ref(false);
   const theme = ref(0);
+  const isSimple = ref(false);
 
   const setTheme = (item) => {
     if (item === "aura") {
@@ -23,5 +24,6 @@ export const useThemeStore = defineStore("theme", () => {
     dark,
     theme,
     setTheme,
+    isSimple
   };
 });

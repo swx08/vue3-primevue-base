@@ -1,6 +1,6 @@
 <template>
     <sidebar-menu :collapsed="collapsedStore.collapsed" :hideToggle="true" :menu="items" width="220px"
-        :theme="themeStore.dark ? '' : 'white-theme'" @item-click="onItemClick">
+        :theme="themeStore.isSimple ? '' : 'white-theme'" @item-click="onItemClick">
         <template v-slot:header>
             <Logo />
             <Divider />

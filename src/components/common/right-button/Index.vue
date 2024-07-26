@@ -25,6 +25,16 @@
 
             <div>
                 <span>布局模式</span>
+                <div>
+                    <div style="cursor: pointer;" @click="handlerLayout">
+                        <svg-icon name="simple" />
+                        <p>简约模式</p>
+                    </div>
+                    <div style="cursor: pointer;" @click="handlerLayout">
+                        <svg-icon name="business" />
+                        <p>商务模式</p>
+                    </div>
+                </div>
             </div>
         </div>
     </Drawer>
@@ -51,6 +61,11 @@ const handlerTheme = (theme) => {
     themeStore.setTheme(theme);
     //刷新
     location.reload();
+}
+
+// 切换布局模式
+const handlerLayout = () => {
+    themeStore.isSimple = !themeStore.isSimple;
 }
 
 const handlerDrawer = () => {
@@ -90,5 +105,20 @@ const handlerDrawer = () => {
     align-items: center;
     height: 100%;
     justify-content: space-between;
+}
+
+.drawer-container>div:nth-child(3) {
+    width: 100%;
+}
+
+.drawer-container>div:nth-child(3)>div {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+
+    p{
+        font-size: 12px;
+    }
 }
 </style>
