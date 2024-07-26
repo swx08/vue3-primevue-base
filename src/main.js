@@ -39,12 +39,18 @@ app.use(globalComponent);
 const themeStore = useThemeStore();
 app.use(PrimeVue, {
   theme: {
-    preset: themeStore.theme === 0 ? Aura : themeStore.theme === 1 ? Lara : Nora,
+    preset:
+      themeStore.theme === 0 ? Aura : themeStore.theme === 1 ? Lara : Nora,
     options: {
       darkModeSelector: ".my-app-dark",
+      cssLayer: {
+        name: "primevue",
+        order: "tailwind-base, primevue, tailwind-utilities",
+      },
     },
   },
 });
+
 app.use(ToastService);
 
 app.use(router);
