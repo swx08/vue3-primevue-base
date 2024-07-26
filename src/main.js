@@ -19,6 +19,7 @@ import "./permission";
 //引入自定义插件用来注册全局组件
 import "virtual:svg-icons-register";
 import globalComponent from "@/plugins";
+import { useThemeStore } from "@/stores/models/theme";
 
 const app = createApp(App);
 const persist = createPersistedState();
@@ -29,9 +30,7 @@ app.use(PrimeVue, {
   theme: {
     preset: Aura,
     options: {
-      prefix: "my",
       darkModeSelector: ".my-app-dark",
-      cssLayer: false,
     },
   },
 });
@@ -39,4 +38,9 @@ app.use(ToastService);
 app.use(pinia);
 pinia.use(persist);
 app.use(router);
+const themeStore = useThemeStore();
+const handlerBeforeUnload = () => {
+  themeStore.dark = !themeStore.dark;
+};
+window.addEventListener("beforeunload", handlerBeforeUnload);
 app.mount("#app");

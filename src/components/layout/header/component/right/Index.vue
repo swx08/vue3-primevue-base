@@ -4,6 +4,12 @@
             <Button icon="pi pi-bell" text rounded @click="handgeCollapsedStatus" severity="secondary" />
         </span>
         <span>
+            <Button v-if="!themeStore.dark" icon="pi pi-sun" text rounded @click="toggleColorScheme" severity="secondary"
+                size="small" />
+            <Button v-else icon="pi pi-moon" text rounded @click="toggleColorScheme" severity="secondary"
+                size="small" />
+        </span>
+        <span>
             <Button icon="pi pi-refresh" text rounded @click="handgeCollapsedStatus" severity="secondary" />
         </span>
         <span>
@@ -27,7 +33,9 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import { useThemeStore } from "@/stores/models/theme";
 
+const themeStore = useThemeStore();
 const menu = ref(null);
 const items = ref([
     {
@@ -48,6 +56,13 @@ const handler = (item) => {
     console.log(item)
 };
 onMounted(() => {})
+
+
+const toggleColorScheme = () => {
+    const element = document.querySelector('html');
+    element.classList.toggle('my-app-dark');
+    themeStore.dark = !themeStore.dark;
+}
 
 </script>
 <style scoped lang='scss'>

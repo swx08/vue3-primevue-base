@@ -1,6 +1,6 @@
 <template>
     <sidebar-menu :collapsed="collapsedStore.collapsed" :hideToggle="true" :menu="items" width="220px"
-        theme="white-theme" @item-click="onItemClick">
+        :theme="themeStore.dark ? '' : 'white-theme'" @item-click="onItemClick">
         <template v-slot:header>
             <Logo />
             <Divider />
@@ -15,13 +15,15 @@ import Logo from "@/components/layout/aside/component/logo/Index.vue";
 import { SidebarMenu } from 'vue-sidebar-menu';
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css';
 import { useCollapsedStore } from "@/stores/models/collapsed";
-import {useRoute} from 'vue-router';
+import { useRoute } from 'vue-router';
+import { useThemeStore } from "@/stores/models/theme";
 
 //控制菜单收缩
 const collapsedStore = useCollapsedStore();
 const route = useRoute();
+const themeStore = useThemeStore();
 
-onMounted(() => {})
+onMounted(() => { })
 
 const items = ref([
     {
@@ -81,7 +83,7 @@ const items = ref([
 ]);
 </script>
 <style scoped lang='scss'>
-:deep(.p-divider-horizontal){
+:deep(.p-divider-horizontal) {
     padding: 0;
     margin: 0 0 16px 0;
 }
