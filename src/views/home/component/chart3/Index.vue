@@ -1,5 +1,5 @@
 <template>
-    <Chart :height="300" type="line" :data="chartData" :options="chartOptions" class="h-[30rem]" />
+    <Chart :height="380" type="line" :data="chartData" :options="chartOptions" class="h-[30rem]" />
 </template>
 
 <script setup>

@@ -1,9 +1,9 @@
 <template>
     <!-- 右侧按钮 -->
     <div class="flex-container">
-        <Button style="border-radius: 8px 0 0 8px;" severity="success" raised aria-label="Search"
+        <Button style="border-radius: 8px 0 0 8px;padding: 8px;" severity="success" raised aria-label="Search"
             @click="handlerDrawer">
-            <i class="pi pi-cog" style="font-size: 1.4rem"></i>
+            <i class="pi pi-cog" style="font-size: 1.8rem"></i>
         </Button>
     </div>
 

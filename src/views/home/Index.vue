@@ -18,25 +18,45 @@
   </div>
 
   <div class="middle-container">
-    <Card style="width: 49.2%;margin-bottom: 16px;">
+    <Card class="card">
+      <template #header>
+        <div class="header">
+          Recent Sales
+        </div>
+      </template>
       <template #content>
         <Chat1 />
       </template>
     </Card>
 
-    <Card style="width: 49.2%;margin-bottom: 16px;">
+    <Card class="card">
+      <template #header>
+        <div class="header">
+          Best Selling Products
+        </div>
+      </template>
       <template #content>
         <Chat2 />
       </template>
     </Card>
 
-    <Card style="width: 49.2%;margin-bottom: 16px;">
+    <Card class="card">
+      <template #header>
+        <div class="header">
+          Sales Overview
+        </div>
+      </template>
       <template #content>
         <Chat3 />
       </template>
     </Card>
 
-    <Card style="width: 49.2%;">
+    <Card class="card">
+      <template #header>
+        <div class="header">
+          Notifications
+        </div>
+      </template>
       <template #content>
         <Chat4 />
       </template>
@@ -99,15 +119,20 @@ const data = ref([
 }
 
 .middle-container {
-  display: flex;
   width: 100%;
-  justify-content: space-between;
-  margin-top: 16px;
-  flex-wrap: wrap;
+  margin: 16px 0 3px 0;
+  columns: 2;
+  column-gap: 16px;
 }
 
-.middle-container>card {
-  flex: auto;
-  margin-top: 16px;
+.middle-container>.card {
+  margin-bottom: 16px;
+}
+
+.header {
+  height: 40px;
+  padding: 20px 0 0 16px;
+  font-size: 18px;
+  font-weight: 600;
 }
 </style>
