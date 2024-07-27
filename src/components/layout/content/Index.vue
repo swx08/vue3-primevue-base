@@ -7,7 +7,7 @@
     }">
       <router-view v-slot="{ Component }">
         <transition name="fade">
-          <component :is="Component" />
+          <component :is="Component" v-if="flag" />
         </transition>
       </router-view>
     </ScrollPanel>
@@ -15,13 +15,28 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, watch, nextTick } from 'vue';
 import { useCollapsedStore } from "@/stores/models/collapsed";
+import { useRefreshStore } from "@/stores/models/refresh";
 
 //控制菜单收缩
 const collapsedStore = useCollapsedStore();
-onMounted(() => { })
+const useRefresh = useRefreshStore();
+//控制当前组件是否销毁重建
+const flag = ref(true);
 
+//监听pina中存储的refresh是否改变，若改变则说明刷新
+watch(
+  () => useRefresh.refresh,
+  () => {
+    //点击刷新按钮，路由组件销毁
+    flag.value = false;
+    //紧接着又重新创建组件，相当于重新发送请求
+    nextTick(() => {
+      flag.value = true;
+    });
+  }
+);
 </script>
 <style scoped lang='scss'>
 .layout-content {

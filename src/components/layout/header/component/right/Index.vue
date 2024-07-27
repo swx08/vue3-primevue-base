@@ -4,7 +4,7 @@
             <Button icon="pi pi-bell" text rounded @click="handgeCollapsedStatus" severity="secondary" />
         </span>
         <span>
-            <Button icon="pi pi-refresh" text rounded @click="handgeCollapsedStatus" severity="secondary" />
+            <Button icon="pi pi-refresh" text rounded @click="handgeDoRefresh" severity="secondary" />
         </span>
         <span>
             <Button icon="pi pi-expand" text rounded @click="handgeCollapsedStatus" severity="secondary" size="small" />
@@ -27,6 +27,9 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import { useRefreshStore } from "@/stores/models/refresh";
+
+const useRefresh = useRefreshStore();
 const menu = ref(null);
 const items = ref([
     {
@@ -48,6 +51,10 @@ const handler = (item) => {
 };
 onMounted(() => {})
 
+// 刷新
+const handgeDoRefresh = () => {
+    useRefresh.refresh = !useRefresh.refresh;
+}
 </script>
 <style scoped lang='scss'>
 .header-right{
