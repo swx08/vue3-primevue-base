@@ -4,10 +4,11 @@
             <Button icon="pi pi-bell" text rounded @click="handgeCollapsedStatus" severity="secondary" />
         </span>
         <span>
-            <Button icon="pi pi-refresh" text rounded @click="handgeDoRefresh" severity="secondary" />
+            <Button icon="pi pi-refresh" text rounded @click="handleDoRefresh" severity="secondary" />
         </span>
         <span>
-            <Button icon="pi pi-expand" text rounded @click="handgeCollapsedStatus" severity="secondary" size="small" />
+            <Toast />
+            <Button icon="pi pi-expand" text rounded @click="handleChangeScreen" severity="secondary" size="small" />
         </span>
         <span>
             <Button icon="pi pi-user" severity="secondary" rounded text @click="toggle">
@@ -28,7 +29,10 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRefreshStore } from "@/stores/models/refresh";
+import { useToast } from "primevue/usetoast";
+import screenfull from "screenfull";
 
+const toast = useToast();
 const useRefresh = useRefreshStore();
 const menu = ref(null);
 const items = ref([
@@ -52,8 +56,18 @@ const handler = (item) => {
 onMounted(() => {})
 
 // 刷新
-const handgeDoRefresh = () => {
+const handleDoRefresh = () => {
     useRefresh.refresh = !useRefresh.refresh;
+}
+
+// 切换全屏
+const handleChangeScreen = () => {
+    if (screenfull.isEnabled) {
+        //可以来回切换全屏/非全屏
+        screenfull.toggle();
+    } else {
+        toast.add({ severity: 'error', summary: '您的浏览器不支持全屏！' });
+    }
 }
 </script>
 <style scoped lang='scss'>
