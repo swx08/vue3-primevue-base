@@ -73,7 +73,7 @@ const items = ref([
             },
             {
                 href: '/permission/menu',
-                title: '角色管理',
+                title: '菜单管理',
                 icon: 'pi pi-box',
                 exact: true,
                 isActive: (item) => item.href === route.path ? true : false
