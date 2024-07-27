@@ -77,7 +77,6 @@ const handlerDrawer = () => {
     position: absolute;
     right: 0;
     top: 50%;
-    z-index: 9999;
 }
 
 .drawer-container {

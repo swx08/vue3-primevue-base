@@ -2,13 +2,9 @@
   <Card class="layout-header" :class="{ collapsed: collapsedStore.collapsed ? true : false }">
     <template #content>
       <div class="header-content">
-        <div>
-          <Collapsed />
-        </div>
-
-        <div>
-          <header-right />
-        </div>
+        <Collapsed />
+        
+        <header-right />
       </div>
     </template>
   </Card>

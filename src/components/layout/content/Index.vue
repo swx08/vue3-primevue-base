@@ -1,16 +1,12 @@
 <template>
   <div class="layout-content" :class="{ collapsed: collapsedStore.collapsed ? true : false }">
-    <ScrollPanel class="scroll-panel" :dt="{
-      bar: {
-        background: '{primary.color}'
-      }
-    }">
+    <Simplebar class="scrollbarWrap" data-simplebar-auto-hide="false">
       <router-view v-slot="{ Component }">
         <transition name="fade">
           <component :is="Component" v-if="flag" />
         </transition>
       </router-view>
-    </ScrollPanel>
+    </Simplebar>
   </div>
 </template>
 
@@ -18,6 +14,8 @@
 import { ref, watch, nextTick } from 'vue';
 import { useCollapsedStore } from "@/stores/models/collapsed";
 import { useRefreshStore } from "@/stores/models/refresh";
+import Simplebar from 'simplebar-vue';
+import 'simplebar-vue/dist/simplebar.min.css';
 
 //控制菜单收缩
 const collapsedStore = useCollapsedStore();
@@ -44,7 +42,6 @@ watch(
   width: calc(100vw - $base-aside-width);
   margin: $base-content-margin;
   transition: all 0.3s;
-  // overflow: scroll;
 
   &.collapsed {
     width: calc(100vw - $base-aside-collapsed-width);
@@ -52,9 +49,20 @@ watch(
   }
 }
 
-.scroll-panel {
+.scrollbarWrap {
   height: calc(100vh - $base-header-height - $base-header-padding * 3);
   width: 100%;
+}
+
+// 滚动条背景颜色
+:deep(.simplebar-scrollbar::before) {
+  display: none;
+  // background-color: $simplebar-scrollbar-backColor;
+}
+
+// 滚动条宽度
+:deep(.simplebar-vertical) {
+  width: 10px;
 }
 
 .fade-enter-active {

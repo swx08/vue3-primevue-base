@@ -11,6 +11,7 @@ import Aura from "@primevue/themes/aura";
 import Lara from "@primevue/themes/lara";
 import Nora from "@primevue/themes/nora";
 import ToastService from "primevue/toastservice";
+import Tooltip from "primevue/tooltip";
 
 //Pinia
 import pinia from "@/stores/index";
@@ -51,6 +52,7 @@ app.use(PrimeVue, {
   },
 });
 
+app.directive("tooltip", Tooltip);
 app.use(ToastService);
 
 app.use(router);

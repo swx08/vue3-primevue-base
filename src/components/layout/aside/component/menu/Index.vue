@@ -1,6 +1,6 @@
 <template>
     <sidebar-menu :collapsed="collapsedStore.collapsed" :hideToggle="true" :menu="items" width="220px"
-        :theme="themeStore.isSimple ? '' : 'white-theme'" @item-click="onItemClick">
+        :theme="themeStore.isSimple ? '' : 'white-theme'" @item-click="handlerClick">
         <template v-slot:header>
             <Logo />
             <Divider />
@@ -15,6 +15,7 @@ import Logo from "@/components/layout/aside/component/logo/Index.vue";
 import { SidebarMenu } from 'vue-sidebar-menu';
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css';
 import { useCollapsedStore } from "@/stores/models/collapsed";
+import { useBreadcrumbStore } from "@/stores/models/breadcrumb";
 import { useRoute } from 'vue-router';
 import { useThemeStore } from "@/stores/models/theme";
 
@@ -22,6 +23,7 @@ import { useThemeStore } from "@/stores/models/theme";
 const collapsedStore = useCollapsedStore();
 const route = useRoute();
 const themeStore = useThemeStore();
+const breadcrumbStore = useBreadcrumbStore();
 
 onMounted(() => { })
 
@@ -79,8 +81,15 @@ const items = ref([
                 isActive: (item) => item.href === route.path ? true : false
             }
         ]
-    }
+    },
 ]);
+
+//添加路由面包屑
+const handlerClick = (event, item) => {
+    if (item.child === undefined) {
+        breadcrumbStore.addBreadcrumb(item);
+    }
+}
 </script>
 <style scoped lang='scss'>
 :deep(.p-divider-horizontal) {

@@ -1,14 +1,14 @@
 <template>
     <div class="header-right">
+        <Message />
         <span>
-            <Button icon="pi pi-bell" text rounded @click="handgeCollapsedStatus" severity="secondary" />
-        </span>
-        <span>
-            <Button icon="pi pi-refresh" text rounded @click="handleDoRefresh" severity="secondary" />
+            <Button v-tooltip.bottom="'刷新'" icon="pi pi-refresh" text rounded @click="handleDoRefresh"
+                severity="secondary" />
         </span>
         <span>
             <Toast />
-            <Button icon="pi pi-expand" text rounded @click="handleChangeScreen" severity="secondary" size="small" />
+            <Button v-tooltip.bottom="'全屏'" icon="pi pi-expand" text rounded @click="handleChangeScreen"
+                severity="secondary" size="small" />
         </span>
         <span>
             <Button icon="pi pi-user" severity="secondary" rounded text @click="toggle">
@@ -31,6 +31,7 @@ import { ref, onMounted } from 'vue';
 import { useRefreshStore } from "@/stores/models/refresh";
 import { useToast } from "primevue/usetoast";
 import screenfull from "screenfull";
+import Message from "@/components/common/msg/Index.vue";
 
 const toast = useToast();
 const useRefresh = useRefreshStore();
@@ -53,7 +54,7 @@ const toggle = (event) => {
 const handler = (item) => {
     console.log(item)
 };
-onMounted(() => {})
+onMounted(() => { })
 
 // 刷新
 const handleDoRefresh = () => {
@@ -71,13 +72,13 @@ const handleChangeScreen = () => {
 }
 </script>
 <style scoped lang='scss'>
-.header-right{
+.header-right {
     display: flex;
     align-items: center;
     height: 64px;
 }
 
-.header-right span{
+.header-right span {
     margin: 0 10px 0 10px;
 }
 </style>
