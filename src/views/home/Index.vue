@@ -5,7 +5,8 @@
         <div style="display: flex;justify-content: space-between;">
           <div style="display: flex;flex-direction: column;align-content: space-between;">
             <span style="color: #666;">{{ item.name }}</span>
-            <span style="margin: 22px 0 22px 0;font-weight: 600;font-size: 18px;">{{ item.num }}</span>
+            <count-up style="margin: 22px 0 22px 0;font-weight: 600;font-size: 18px;" :start-val="0" :end-val="item.num"
+              :duration="2.5" :decimal-places="1" :delay="2"></count-up>
             <span><span style="color: green;">{{ item.descCount }}</span> {{ item.desc }}</span>
           </div>
           <div>
@@ -49,11 +50,12 @@ import Chat1 from "@/views/home/component/chart1/Index.vue";
 import Chat2 from "@/views/home/component/chart2/Index.vue";
 import Chat3 from "@/views/home/component/chart3/Index.vue";
 import Chat4 from "@/views/home/component/chart4/Index.vue";
+import CountUp from 'vue-countup-v3'
 
 const data = ref([
   {
     name: '订单数',
-    num: '152',
+    num: 500,
     icon: 'pi pi-cart-plus',
     descCount: '24 new',
     desc: 'since last visit',
@@ -61,7 +63,7 @@ const data = ref([
   },
   {
     name: '收入',
-    num: '$2.100',
+    num: 2000,
     icon: 'pi pi-wallet',
     descCount: '%52+',
     desc: 'since last week',
@@ -69,7 +71,7 @@ const data = ref([
   },
   {
     name: '用户数',
-    num: '28441',
+    num: 3400,
     icon: 'pi pi-user',
     descCount: '520',
     desc: 'newly registered',
@@ -77,71 +79,13 @@ const data = ref([
   },
   {
     name: '评论数',
-    num: '152 Unread',
+    num: 4000,
     icon: 'pi pi-comments',
     descCount: '85',
     desc: 'responded',
     type: 'help'
   },
 ]);
-
-onMounted(() => {
-  chartData.value = setChartData();
-  chartOptions.value = setChartOptions();
-});
-
-const chartData = ref();
-const chartOptions = ref();
-
-const setChartData = () => {
-  return {
-    labels: ['Q1', 'Q2', 'Q3', 'Q4'],
-    datasets: [
-      {
-        label: 'Sales',
-        data: [540, 325, 702, 620],
-        backgroundColor: ['rgba(249, 115, 22, 0.2)', 'rgba(6, 182, 212, 0.2)', 'rgb(107, 114, 128, 0.2)', 'rgba(139, 92, 246 0.2)'],
-        borderColor: ['rgb(249, 115, 22)', 'rgb(6, 182, 212)', 'rgb(107, 114, 128)', 'rgb(139, 92, 246)'],
-        borderWidth: 1
-      }
-    ]
-  };
-};
-const setChartOptions = () => {
-  const documentStyle = getComputedStyle(document.documentElement);
-  const textColor = documentStyle.getPropertyValue('--p-text-color');
-  const textColorSecondary = documentStyle.getPropertyValue('--p-text-muted-color');
-  const surfaceBorder = documentStyle.getPropertyValue('--p-content-border-color');
-
-  return {
-    plugins: {
-      legend: {
-        labels: {
-          color: textColor
-        }
-      }
-    },
-    scales: {
-      x: {
-        ticks: {
-          color: textColorSecondary
-        },
-        grid: {
-          color: surfaceBorder
-        }
-      },
-      y: {
-        beginAtZero: true,
-        ticks: {
-          color: textColorSecondary
-        },
-        grid: {
-          color: surfaceBorder
-        }
-      }
-    }
-  };
-}
 </script>
 <style scoped lang='scss'>
 .top-container {
