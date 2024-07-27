@@ -1,5 +1,8 @@
 # Vue 3 + Vite + Primevue
 
+## 介绍
+> 基础模板，不包含动态路由和权限控制，仅包含基础功能
+
 ## 1. 安装依赖
 ```bash
 npm install

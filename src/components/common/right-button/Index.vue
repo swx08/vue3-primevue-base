@@ -24,15 +24,15 @@
             </div>
 
             <div>
-                <span>布局模式</span>
+                <span>菜单主题</span>
                 <div>
                     <div style="cursor: pointer;" @click="handlerLayout">
                         <svg-icon name="simple" />
-                        <p>简约模式</p>
+                        <p>简约</p>
                     </div>
                     <div style="cursor: pointer;" @click="handlerLayout">
                         <svg-icon name="business" />
-                        <p>商务模式</p>
+                        <p>商务</p>
                     </div>
                 </div>
             </div>
@@ -119,6 +119,7 @@ const handlerDrawer = () => {
 
     p{
         font-size: 12px;
+        text-align: center;
     }
 }
 </style>
