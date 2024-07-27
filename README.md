@@ -33,10 +33,10 @@ npm i vue-sidebar-menu --save
 
 ## 主面板展示
 >简约模式
-![](https://pic.imgdb.cn/item/66a3d9a9d9c307b7e9e7615e.png)
+![](https://pic.imgdb.cn/item/66a4c9e9d9c307b7e99a82be.png)
 
 >暗黑模式
 
-![](https://pic.imgdb.cn/item/66a3d95dd9c307b7e9e71631.png)
+![](https://pic.imgdb.cn/item/66a4ca09d9c307b7e99aa0c8.png)
 
 
